@@ -1,0 +1,17 @@
+@import '_core/_core';
+
+.ui-control-toggle {
+	.ui-control {
+		@include float(left);
+		border-left: none;
+		@include rounded(0);
+
+		&:first-child {
+			border-left: 1px solid #AAA;
+			@include rounded(2px 0 0 0px);
+		}
+		&:last-child {
+			@include rounded(0 2px 2px 0);
+		}
+	}
+}

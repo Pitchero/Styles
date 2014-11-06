@@ -1,0 +1,86 @@
+.ui-tooltip {
+	$ui_tooltip_arrow_width:$space_size * 1.5;
+	$ui_tooltip_bg_colour:#000;
+	$ui_tooltip_arrow_offset:$space_size;
+	$ui_tooltip_content_offset:($ui_tooltip_arrow_width / 2) - 4px;
+	position:absolute;
+	@include theme-font-size(13px);
+	z-index:999999999999;
+	.ui-tooltip-content {
+		@include rounded(2px);
+		@include opacity(0.85);
+		line-height:1.3;
+		background:#000;
+		padding:($space_size) $space_size * 1.5;
+		color:#FFF;
+		@include inline-block();
+		max-width:350px;
+	}
+	&.top .ui-tooltip-content {
+		@include arrow-down($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour);
+	}
+	&.top-left .ui-tooltip-content {
+		@include arrow-down($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour, $distance: $ui_tooltip_arrow_offset);
+	}
+	&.top-right .ui-tooltip-content {
+		@include arrow-down($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour, $distance: -$ui_tooltip_arrow_offset);
+	}
+	&.bottom .ui-tooltip-content {
+		@include arrow-up($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour);
+	}
+	&.bottom-left .ui-tooltip-content {
+		@include arrow-up($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour, $distance: $ui_tooltip_arrow_offset);
+	}
+	&.bottom-right .ui-tooltip-content {
+		@include arrow-up($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour, $distance: -$ui_tooltip_arrow_offset);
+	}
+	&.left .ui-tooltip-content {
+		@include arrow-right($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour);
+	}
+	&.left-top .ui-tooltip-content {
+		@include arrow-right($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour, $distance: $ui_tooltip_arrow_offset);
+	}
+	&.left-bottom .ui-tooltip-content {
+		@include arrow-right($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour, $distance: -$ui_tooltip_arrow_offset);
+	}
+	&.right .ui-tooltip-content {
+		@include arrow-left($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour);
+	}
+	&.right-top .ui-tooltip-content {
+		@include arrow-left($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour, $distance: $ui_tooltip_arrow_offset);
+	}
+	&.right-bottom .ui-tooltip-content {
+		@include arrow-left($width: $ui_tooltip_arrow_width, $colour: $ui_tooltip_bg_colour, $distance: -$ui_tooltip_arrow_offset);
+	}
+	&.top,
+	&.top-left,
+	&.top-right {
+		.ui-tooltip-content {
+			top:-$ui_tooltip_content_offset;
+		}
+	}
+	&.bottom,
+	&.bottom-left,
+	&.bottom-right {
+		.ui-tooltip-content {
+			top:$ui_tooltip_content_offset;
+		}
+	}
+	&.left,
+	&.left-top,
+	&.left-bottom {
+		.ui-tooltip-content {
+			left:-$ui_tooltip_content_offset;
+		}
+	}
+	&.right,
+	&.right-top,
+	&.right-bottom {
+		.ui-tooltip-content {
+			left:$ui_tooltip_content_offset;
+		}
+	}
+}
+.ui-tooltip-text {
+	border-bottom:1px dotted $text_secondary_colour;
+}

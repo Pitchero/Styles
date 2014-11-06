@@ -1,0 +1,32 @@
+.placeholder-box {
+	border:1px solid $border_primary_colour;
+	color:$text_secondary_colour;
+	padding-left:$space_size * 2;
+	padding-right:$space_size * 2;
+	background-color:$grey_bg_colour;
+	
+	&.placeholder-box-small {
+		padding-top:$space_size * 3;
+		padding-bottom:$space_size * 3;
+	}
+	&.placeholder-box-medium {
+		padding-top:$space_size * 6;
+		padding-bottom:$space_size * 6;
+	}
+	&.placeholder-box-large {
+		padding-top:$space_size * 12;
+		padding-bottom:$space_size * 12;
+	}
+	&.placeholder-box-xlarge {
+		padding-top:$space_size * 24;
+		padding-bottom:$space_size * 24;
+	}
+	&.placeholder-box-dark {
+		background: #222;
+		border:0;
+		color: #fff;
+	}
+	.cta {
+		margin-top:$space_size;
+	}	
+}

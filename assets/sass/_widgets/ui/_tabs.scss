@@ -1,0 +1,79 @@
+@import '_core/_core';
+
+.ui-tabs {
+	margin-bottom: 24px;
+
+	.tab-btns {
+		@include clearfix;
+		margin-bottom: -1px;
+		position: relative;
+		z-index: 1;
+
+		li {
+			@include float(left);
+			margin-right: 4px;
+
+			a {
+				display: block;
+				color: #fff;
+				font-size: 16px;
+				font-weight: bold;
+				background: $primary_colour;
+				line-height: 40px;
+				height: 40px;
+				padding: 0 14px;
+				@include rounded(3px 3px 0 0);
+				border: 1px solid $primary_colour;
+				border-bottom: none;
+
+				&:hover {
+					background: $primary_colour_d8;
+					text-decoration: none;
+				}
+			}
+
+			&.active a {
+				color: $primary_colour;
+				background: #fff;
+				border-color: #ddd;
+			}
+		}
+	}
+
+	.tab-contents {
+		padding: 18px 12px 24px;
+
+		.tab-pane {
+			position: absolute;
+			left: 9999px;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+
+			&.active {
+				position: static;
+				width: auto;
+				height: auto;
+				overflow: visible;
+			}
+		}
+
+		.no-js & .tab-loading {
+			background: #fdd;
+			border: 2px solid #c99;
+			padding: 10px 20px;
+			margin-top: 18px;
+		}
+
+		.js & .tab-loading {
+			@include image-text;
+			width: 100%;
+			height: 80px;
+			background: url(/core/images/loading/spinner-64-light.gif) no-repeat center center;
+		}
+	}
+
+	.ribbon-right {
+		padding: 0;
+	}
+}

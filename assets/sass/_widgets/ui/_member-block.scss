@@ -1,0 +1,31 @@
+.ui-member-block {
+	@include inline-block();
+	@include theme-box($border_colour:#CCC);
+	padding-right:6px;
+	@include rounded(2px);
+	background:#f7f7f7;
+	.avatar {
+		width:28px;
+		height:28px;
+		vertical-align:middle;
+	}
+	.icon-close {
+		margin-left:4px;
+		color:#BBB;
+		&:hover {
+			color:#999;
+		}
+	}
+	&.no-avatar {
+		line-height:28px;
+		padding-left:6px;
+	}
+	&.full-width {
+		@include clearfix();
+		display:block;
+		.icon-close {
+			float:right;
+			margin-top:7px;
+		}
+	}
+}

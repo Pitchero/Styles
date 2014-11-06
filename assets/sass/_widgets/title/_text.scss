@@ -1,0 +1,29 @@
+.title-text-xlarge {
+	@include theme-font-size(40px);
+	color:$text_primary_colour;
+	.icon {
+		color:$text_secondary_colour;
+	}
+}
+.title-text-primary {
+	@include theme-font-size(30px);
+	color:$text_primary_colour;
+	.icon {
+		color:$text_secondary_colour;
+	}
+}
+.title-text-secondary {
+	@include theme-font-size(21px);
+	color:$text_primary_colour;
+	.icon {
+		color:$text_secondary_colour;
+	}
+}
+.title-text-tertiary {
+	@include theme-font-size(19px);
+	color:#444;
+}
+.title-text-quaternary {
+	@include theme-font-size(16px);
+	color:#444;
+}

@@ -1,0 +1,19 @@
+@import '_core/_core';
+
+.header-split {
+	@include clearfix;
+}
+.header-split-left {
+	@include float(left);
+}
+.header-split-right {
+	@include float(right);
+	text-align: right;
+}
+// To be used for simple text links to they roughly aline with the title baseline
+.header-split-text-link {
+	margin-top:7px;
+	a {
+		font-weight:bold;
+	}
+}

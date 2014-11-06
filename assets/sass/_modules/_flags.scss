@@ -1,0 +1,10 @@
+/* 2-colour flag for clubs, leagues and counties */
+.colour-flag {
+    @include inline-block();
+    vertical-align: middle;
+    width: 0px;
+    height: 0px;
+    font: 0/0 a;
+    overflow: hidden;
+    border: 7px solid #fff;
+}

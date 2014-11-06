@@ -1,0 +1,134 @@
+@mixin ui-button-theme($color, $text_colour: #FFF) {
+	color:#FFF;
+	background-color:$color;
+	border-color:$color;
+	text-shadow:0 1px 1px rgba(0,0,0,0.3);
+	&:hover {
+		color:$text_colour;
+	}
+}
+/**
+ * ui-control and ui-button share styling
+ */
+.ui-button,
+.ui-control {
+	@include inline-block();
+	@include rounded(2px);
+	@include shadow(0 1px 2px rgba(0, 0, 0, 0.1), inset 0 -1px 0px rgba(0, 0, 0, 0.3));
+	@include theme-font-size(14px);
+	background:#EEE;
+	border:1px solid #BBB;
+	text-decoration:none;
+	font-size:inherit;
+	color:$text_primary_colour;
+	font-weight:bold;
+	line-height:normal;
+	cursor:pointer;
+	outline:none;
+	padding:4px;
+	line-height:1.2;
+	-webkit-appearance: none;
+	&:hover {
+		@include shadow(0 1px 2px rgba(0, 0, 0, 0.3), inset 0 -1px 0px rgba(0, 0, 0, 0.3));
+		text-decoration:none;
+		color:$text_primary_colour;
+	}
+	&:active {
+		@include shadow(inset 0 1px 2px rgba(0,0,0,0.3));
+		outline:none;
+	}
+	&:focus {
+		outline:none;
+	}
+    &.ui-button-loading{
+        background: #eee url(/core/images/loading/ajax-loader.gif) no-repeat center center;
+        color:#CCC;
+    }
+	&.ui-control-disabled,
+	&.ui-button-disabled,
+	&.disabled {
+		color:#CCC;
+		cursor:not-allowed;
+		&:hover {
+			@include shadow(0 1px 2px rgba(0, 0, 0, 0.1), inset 0 -1px 0px rgba(0, 0, 0, 0.3));
+		}
+		&:active {
+			@include shadow(0 1px 2px rgba(0, 0, 0, 0.1), inset 0 -1px 0px rgba(0, 0, 0, 0.3));
+		}
+		
+	}
+	&.depressed {
+		@include shadow(inset 0 1px 2px rgba(0,0,0,0.3));
+		outline:none;	
+	}
+}
+
+/**
+ * ui-button overrides
+ */
+.ui-button {
+	padding:6px $space_size;
+	&.ui-button-large {
+		padding:$space_size ($space_size * 2) ($space_size + 1px);
+	}
+	&.ui-button-xlarge {
+		padding:($space_size * 1.5) ($space_size * 3) (($space_size * 1.5) + 2px);
+		@include theme-font-size(19px);
+	}
+	&.ui-button-block {
+		padding-left:0;
+		padding-right:0;
+		width:100%;
+		display:block;
+		text-align:center;
+		&:active {
+			padding-left:0;
+			padding-right:0;
+		}
+	}
+}
+
+/**
+ * Themed buttons
+ */
+.ui-button-primary {
+	@include ui-button-theme($primary_colour, $primary_colour_contrast);
+}
+.ui-button-positive {
+	@include ui-button-theme($positive_colour);
+}
+.ui-button-negative {
+	@include ui-button-theme($negative_colour);
+}
+.ui-button-neutral {
+	@include ui-button-theme($text_primary_colour);
+}
+.ui-button-passive {
+	@include ui-button-theme($text_tertiary_colour);
+}
+.ui-button-facebook {
+	@include ui-button-theme(#3B5998);
+}
+
+/**
+ * Browser hacks
+ */
+.ui-button {
+	*overflow:visible; // Fixes extra horizontal padding in IE7
+}
+input.ui-button,
+button.ui-button {
+	*height: 31px; // Makes input and button heights the same as anchors in IE7
+}
+input.ui-button.ui-button-large,
+button.ui-button.ui-button-large {
+	*height: 43px; // Makes input and button heights the same as anchors in IE7
+}
+input.ui-button.ui-button-xlarge,
+button.ui-button.ui-button-xlarge {
+	*height: 62px; // Makes input and button heights the same as anchors in IE7
+}
+.ui-button::-moz-focus-inner {
+	border:0;  // Fixes extra vertical size in FF
+	padding:0;  // Fixes extra vertical size in FF
+}

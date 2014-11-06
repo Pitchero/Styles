@@ -1,0 +1,74 @@
+.grid-container{
+    @include clearfix;
+    &.container-blank{
+        background:#FFF;
+    }
+    &.container-6-col{
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 960px;
+        .grid-1 { width: 144px; }
+        .grid-2 { width: 304px; }
+        .grid-3 { width: 464px; }
+        .grid-4 { width: 624px; }
+        .grid-5 { width: 784px; }
+        .grid-6 {
+            width: 944px;
+            &.gutterless{
+                width: 1000px;
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+        }
+
+        .prefix-1 { padding-left: 160px; }
+        .prefix-2 { padding-left: 320px; }
+        .prefix-3 { padding-left: 480px; }
+        .prefix-4 { padding-left: 640px; }
+        .prefix-5 { padding-left: 800px; }
+
+        .suffix-1 { padding-right: 160px; }
+        .suffix-2 { padding-right: 320px; }
+        .suffix-3 { padding-right: 480px; }
+        .suffix-4 { padding-right: 640px; }
+        .suffix-5 { padding-right: 800px; }
+
+
+        .push-1 { left: 160px; }
+        .push-2 { left: 320px; }
+        .push-3 { left: 480px; }
+        .push-4 { left: 640px; }
+        .push-5 { left: 800px; }
+
+        .pull-1 { right: 160px; }
+        .pull-2 { right: 320px; }
+        .pull-3 { right: 480px; }
+        .pull-4 { right: 640px; }
+        .pull-5 { right: 800px; }
+    }
+
+
+    .grid-1,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-5,
+    .grid-6{
+        display: inline;
+        float: left;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+
+    .push-1, .pull-1,
+    .push-2, .pull-2,
+    .push-3, .pull-3,
+    .push-4, .pull-4,
+    .push-5, .pull-5,
+    .push-6, .pull-6 {
+        position: relative;
+    }
+}

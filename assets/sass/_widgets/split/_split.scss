@@ -1,0 +1,10 @@
+.split {
+	@include clearfix();
+	display:block;
+	.split-left {
+		float:left;
+	}
+	.split-right {
+		float:right;
+	}
+}

@@ -1,0 +1,26 @@
+// Import core variables and mixins
+@import '../_core/_core';
+
+// Always namespace styles within a page or section specific class
+.style-guide {
+	.spacing-padding-styles {
+		[class^='pad-'], [class^='space-'] {
+		    background:#F3F3F3;
+		    border-top:1px solid $border_primary_colour;
+		    border-bottom:1px solid $border_primary_colour;
+		    p {
+		    	margin:0;
+		    	padding:0;
+		    	text-align:center;
+		    }
+		}
+	}
+	.grid-styles [class^='grid-'] {
+	    height: 100px;
+	    background:#F3F3F3;
+	    p {
+	        display: block;
+	        padding: $space-size;
+	    }
+	}
+}

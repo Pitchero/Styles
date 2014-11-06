@@ -1,0 +1,37 @@
+* {
+	margin:0;
+	padding:0;
+}
+html {
+	font-size:62.5%;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	font-family: $font_regular;
+	font-size:1.3em;
+	line-height:1.1;
+    color: $text_primary_colour;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+	color:$important_text_colour;
+	text-decoration:none;
+
+	img {
+		border: none;
+	}
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+p {
+	margin-bottom:$space_size * (2/3);
+}
+li {
+	list-style:none;
+}
+button, input, select {
+	font-family: $font_regular;
+    -webkit-font-smoothing: antialiased;
+}

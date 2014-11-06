@@ -1,0 +1,247 @@
+$gradient_diff:5;
+$hover_darken:5;
+$mini_height:22px;
+$normal_height:29px;
+$large_height:40px;
+$primary_large_height:46px;
+$heavy_height:58px;
+
+@mixin core-btn {
+	
+	@include inline-block();
+	text-decoration:none;
+	box-shadow:rgba(0,0,0,0.2) 1px 1px 0;
+	color:#FFF;
+	font-weight:bold;
+	zoom:1;
+	border:0;
+	cursor:pointer;
+	padding:7px 12px;
+	@include theme-font-size(13px);
+	line-height:normal;
+    @include rounded(2px);
+	vertical-align:middle;
+    &:hover {
+		color:#FFF;
+        text-decoration:none;
+    }
+}
+@mixin core-btn-primary {
+	color:$primary_colour_contrast;
+	@include gradient-vertical($primary_colour_l5, $primary_colour_d5);
+	&:hover {
+		color:$primary_colour_contrast;
+		@include gradient-vertical($primary_colour, $primary_colour_d10);
+	}
+}
+@mixin core-btn-primary-large {
+	font-size: 22px;
+	font-weight: bold;
+	padding: 10px 55px;
+	//line-height:$primary_large_height;
+}
+@mixin core-btn-primary-heavy {
+	font-size: 30px;
+	font-weight: bold;
+	padding: 12px 30px;
+	//line-height:$heavy_height;
+}	
+
+.core-btn {
+	@include core-btn;
+}
+.core-btn-block {
+	display:block;
+	text-align:center;
+}
+.core-btn-mini {
+	padding:0 6px;
+	line-height:$mini_height;
+	@include theme-font-size(12px);
+}
+.core-btn-large {
+	padding:0 18px;
+	line-height:$large_height;
+	font-size:14px;
+}
+.core-btn-title {
+	padding:0 6px;
+	line-height:20px;
+	@include theme-font-size(12px);
+	text-shadow:rgba(255,255,255,1) 1px 1px 0;
+	box-shadow:rgba(0,0,0,0.2) 1px 1px 1px;
+	@include gradient-vertical-one-colour(#EEE, $gradient_diff);
+	color:$text_primary_colour;
+	&:hover {
+		@include gradient-vertical-one-colour(darken(#EEE, $hover_darken), $gradient_diff);
+	}
+}
+
+.core-btn-secondary {
+	color:$secondary_colour_contrast;
+	@include gradient-vertical($secondary_colour_l5, $secondary_colour_d5);
+	&:hover {
+		@include gradient-vertical($secondary_colour, $secondary_colour_d10);
+	}
+}
+
+.core-btn-neutral {
+	$button_colour:#444;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-passive {
+	$button_colour:#999;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-ui {
+	$button_colour:#999;
+	border: 1px solid #aaaaaa;
+	color: $text_primary_colour;
+	text-shadow: none;
+	@include gradient-vertical(#f3f3f3, #e4e4e4);
+	&:hover {
+		color: $text_primary_colour;
+		@include gradient-vertical(darken(#f3f3f3, $hover_darken), darken(#e4e4e4, $hover_darken));
+	}
+}
+.core-btn-pitchero,
+.core-btn-bundle {
+	$button_colour:#1290B7;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-creative {
+	$button_colour:#79126D;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-subs {
+	$button_colour:#A61417;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-shop {
+	$button_colour:#258E3C;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-sms {
+	$button_colour:#E77725;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-positive {
+	$button_colour:$positive_colour;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-negative {
+	$button_colour:$negative_colour;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}
+.core-btn-fb {
+	$button_colour:#3B5998;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}	
+}
+.core-btn-facebook {
+	padding-top:0;
+	padding-bottom:0;
+	padding-left:6px;
+	span {
+		@include inline-block();
+		background:url(http://images.pitchero.com/up/core-btn-facebook-bg.png) 0 3px no-repeat;
+		padding-top:7px;
+		padding-bottom:7px;
+		padding-left:27px;
+	}
+}
+.core-btn-primary {
+	@include core-btn-primary;
+}
+.core-btn-primary-large {
+	@include core-btn-primary-large;
+}
+.core-btn-primary-heavy {
+	@include core-btn-primary-heavy;
+}
+
+
+input.core-btn,
+button.core-btn {
+	_padding-top:6px\9;
+	_padding-bottom:5px\9;
+	vertical-align:top\9;
+	overflow:visible;
+	font-family:$font_regular;
+	height:$normal_height;
+}
+input.core-btn-block,
+button.core-btn-block {
+	width:100%;
+}
+
+input.core-btn,
+button.core-btn {
+	height:$normal_height;
+	line-height:normal;
+}
+input.core-btn-mini,
+button.core-btn-mini {
+	height:$mini_height;
+}
+input.core-btn-large,
+button.core-btn-large {
+	height:$large_height;	
+}
+input.core-btn-primary-large,
+button.core-btn-primary-large {
+	height:$primary_large_height;	
+}
+input.core-btn-primary-heavy,
+input.core-btn-primary-heavy {
+	height:$heavy_height;
+}
+
+
+a:hover .core-btn-title,
+.core-btn-title:hover {
+	text-shadow:rgba(255,255,255,1) 1px 1px 0;
+	background-image:none;
+	background-color:#CCC;
+}
+.core-btn-full {
+	display:block;
+	text-align:center;
+}
+
+.core-btn-disabled {
+	$button_colour:#C9C9C9;
+	@include gradient-vertical-one-colour($button_colour);
+	&:hover {
+		@include gradient-vertical-one-colour(darken($button_colour, $hover_darken), $gradient_diff);
+	}
+}

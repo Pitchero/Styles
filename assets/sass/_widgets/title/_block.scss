@@ -1,0 +1,12 @@
+.title-block {
+	padding:($space_size / 3) ($space_size / 2);
+	background:#222;
+	.title-text {
+		color:#FFF;
+		text-transform:uppercase;
+		font:$font_condensed;
+		font-weight:bold;
+		font-size:16px;
+		line-height:1.3;
+	}
+}

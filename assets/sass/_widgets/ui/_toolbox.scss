@@ -1,0 +1,73 @@
+.ui-toolbox {
+	position:relative;
+	
+	span.icon-arrow_wrench {
+		color:$text_primary_colour;
+	}
+	span.icon-arrow_down {
+		color:$text_tertiary_colour;
+	}
+	.ui-toolbox-options {
+		display:none;
+		position:absolute;
+		*background: url(http://images.pitchero.com/up/spacer.gif) repeat 0 0; /* IE7 fix */
+		z-index:1;
+		top:0;
+		right:-1px;
+		bottom:-8px;
+		margin:0;
+		padding:0;
+		width:225px;
+		@include theme-font-size(14px);
+		text-align:left;
+		ul {
+			position:absolute;
+			background:#fff;
+			z-index:1;
+			width:225px;
+			top:100%;
+			right:0;
+			border:1px solid #DDD;	// Styles to match those on .ui-control
+			@include shadow(0 1px 1px rgba(0,0,0,0.4)); 	// Styles to match those on .ui-control
+			li {
+				display: block;
+				background:#fff;
+				margin:0;
+				padding:0;
+				border-top:1px solid $border_primary_colour;
+				&:first-child {
+					border-top:0;
+				}
+				a {
+					line-height:1.2;
+					display:block;
+					padding:8px;
+				}
+			}
+		}
+	}
+	.ui-toolbox-options-center {
+		right: -97px;
+		ul {
+			li{
+				&:first-child {
+					@include arrow-up(24px, #fff, 50%, 1px, $border_primary_colour);
+				}
+			}
+			
+		}
+	}
+
+	&:hover, &.hover_effect {
+		@include shadow(inset 0 1px 2px rgba(0,0,0,0.3));
+		span.icon-arrow_down {
+			color:$text_secondary_colour;
+		}
+		.ui-toolbox-options {
+			display:block;
+		}
+	}
+	&:active {
+		outline:none;
+	}
+}

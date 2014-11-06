@@ -1,0 +1,266 @@
+/*
+ * Syntax:
+ * @include arrow-<dir>(<width>, <colour>, <distance>, <border-width>, <border-colour>);
+ */
+
+/**************************************
+ * DOWN
+ *************************************/
+@mixin arrow-down-helper($width, $colour:#fff) {
+	position: relative;
+
+	&:after, &:before {
+		top: 100%;
+		border: solid rgba(255, 255, 255, 0);
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none; 
+	}
+	&:after {
+		border-top-color: $colour;
+		border-width: ($width / 2);
+	}
+}
+
+@mixin arrow-down-helper2($width, $colour:#fff, $distance:50%, $border-width:0, $border-colour:0) {
+	@if $distance >= 0 and $distance != 50% and $border-colour == 0 {
+		@include arrow-down-helper($width, $colour);
+		&:before {
+			left: $distance + ($width / 2);
+		}
+		&:after {
+			left: $distance;
+		}
+	}
+	@if $distance == 50% and $border-colour == 0 {
+		@include arrow-down-helper($width, $colour);
+		&:before {
+			left: $distance;
+		}	
+		&:after {
+			left: $distance;
+			margin-left: -($width / 2);
+		}
+	}
+	@if $distance < 0 and $border-colour == 0 {
+		@include arrow-down-helper($width, $colour);
+		&:before {
+			right: -($distance + ($border-width * 2) - 1);
+		}
+		&:after {
+			right: -$distance;
+			margin-left: -($width / 2);
+		}
+	}
+
+}
+
+@mixin arrow-down($width, $colour:#fff, $distance:50%, $border-width:0, $border-colour:0) {
+	@if($border-colour != 0) {
+		@include arrow-down-helper2($width, $colour, $distance, $border-width);
+		&:before {
+			border-top-color: $border-colour;
+			border-width: (($width / 2) + (($border-width * 2) - 1));
+			margin-left: -(($width / 2) + (($border-width * 2) - 1));
+		}
+	} @else {
+		@include arrow-down-helper2($width, $colour, $distance, $border-width, $border-colour);
+	}
+}
+
+
+/**************************************
+ * UP
+ *************************************/
+@mixin arrow-up-helper($width, $colour:#fff) {
+	position: relative;
+
+	&:after, &:before {
+		bottom: 100%;
+		border: solid rgba(255, 255, 255, 0);
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	&:after {
+		border-bottom-color: $colour;
+		border-width: ($width / 2);
+	}
+}
+@mixin arrow-up-helper2($width, $colour:#fff, $distance:50%, $border-width:0, $border-colour:0) {
+	@if $distance >= 0 and $distance != 50% and $border-colour == 0 {
+		@include arrow-up-helper($width, $colour);
+		&:before {
+			left: $distance + ($width / 2);
+		}
+		&:after {
+			left: $distance;
+		}
+	}
+	@if $distance == 50% and $border-colour == 0 {
+		@include arrow-up-helper($width, $colour);
+		&:before {
+			left: $distance;
+		}	
+		&:after {
+			left: $distance;
+			margin-left: -($width / 2);
+		}
+	}
+	@if $distance < 0 and $border-colour == 0 {
+		@include arrow-up-helper($width, $colour);
+		&:before {
+			right: -($distance + ($border-width * 2) - 1);
+		}
+		&:after {
+			right: -$distance;
+			margin-left: -($width / 2);
+		}
+	}	
+}
+@mixin arrow-up($width, $colour:#fff, $distance:50%, $border-width:0, $border-colour:0) {
+	@if($border-colour != 0) {
+		@include arrow-up-helper2($width, $colour, $distance, $border-width);
+		&:before {
+			border-bottom-color: $border-colour;
+			border-width: (($width / 2) + (($border-width * 2) - 1));
+			margin-left: -(($width / 2) + (($border-width * 2) - 1));
+		}
+	} @else {
+		@include arrow-up-helper2($width, $colour, $distance, $border-width, $border-colour);
+	}
+}
+
+/**************************************
+ * LEFT
+ *************************************/
+@mixin arrow-left-helper($width, $colour:#fff) {
+	position: relative;
+	&:after, &:before {
+		right: 100%;
+		border: solid rgba(255, 255, 255, 0);
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	&:after {
+		border-right-color: $colour;
+		border-width: ($width / 2);
+	}
+}
+@mixin arrow-left-helper2($width, $colour:#fff, $distance:50%, $border-width:0, $border-colour:0) {
+	@if $distance >= 0 and $distance != 50% and $border-colour == 0 {
+        @include arrow-left-helper($width, $colour);		
+        &:before {
+            top: $distance + ($width / 2);
+        }
+        &:after {
+            top: $distance;
+        }
+    }
+	@if $distance == 50% and $border-colour == 0 {
+        @include arrow-left-helper($width, $colour);
+        &:before {
+            top: $distance;
+        }
+        &:after {
+            top: $distance;
+            margin-top: -($width / 2);
+        }
+    }
+    @if $distance < 0 and $border-colour == 0 {
+        @include arrow-left-helper($width, $colour);
+        &:before {
+            bottom: -($distance + ($border-width * 2) - 1);
+        }
+        &:after {
+            bottom: -$distance;
+        }
+    }
+}
+@mixin arrow-left($width, $colour:#fff, $distance:50%, $border-width:0, $border-colour:0) {
+	@if $border-colour != 0 {
+        @include arrow-left-helper2($width, $colour, $distance, $border-width);
+        &:before {
+            border-right-color: $border-colour;
+            border-width: (($width / 2) + (($border-width * 2) - 1));
+            margin-top: -(($width / 2) + (($border-width * 2) - 1));
+        }
+	} @else {
+        @include arrow-left-helper2($width, $colour, $distance, $border-width, $border-colour);	
+	}
+}
+
+/**************************************
+ * RIGHT
+ *************************************/
+@mixin arrow-right-helper($width, $colour:#fff, $left:100%) {
+	position: relative;
+	&:after, &:before {
+		left: $left;
+		border: solid rgba(255, 255, 255, 0);
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	&:after {
+		border-left-color: $colour;
+		border-width: ($width / 2);
+	}
+}
+@mixin arrow-right-helper2($width, $colour:#fff, $distance:50%, $border-width:0, $border-colour:0, $left:100%) {
+	@if $distance >= 0 and $distance != 50% and $border-colour == 0 {
+        @include arrow-right-helper($width, $colour, $left);		
+        &:before {
+            top: $distance + ($width / 2);
+        }
+        &:after {
+            top: $distance;
+        }
+    }
+	@if $distance == 50% and $border-colour == 0 {
+        @include arrow-right-helper($width, $colour, $left);
+        &:before {
+            top: $distance;
+        }
+        &:after {
+            top: $distance;
+            margin-top: -($width / 2);
+        }
+    }
+    @if $distance < 0 and $border-colour == 0 {
+        @include arrow-right-helper($width, $colour, $left);
+        &:before {
+            bottom: -($distance + ($border-width * 2) - 1);
+        }
+        &:after {
+            bottom: -$distance;
+        }
+    }
+}
+@mixin arrow-right($width, $colour:#fff, $distance:50%, $border-width:0, $border-colour:0, $left:100%) {
+	@if $border-colour != 0 {
+        @include arrow-right-helper2($width, $colour, $distance, $border-width, 0, $left);
+        &:before {
+            border-left-color: $border-colour;
+            border-width: (($width / 2) + (($border-width * 2) - 1));
+            margin-top: -(($width / 2) + (($border-width * 2) - 1));
+        }
+	} @else {
+        @include arrow-right-helper2($width, $colour, $distance, $border-width, $border-colour, $left);	
+	}
+}
+@mixin arrow-none() {
+	&:after,
+	&:before {
+		display:none;
+	}
+}

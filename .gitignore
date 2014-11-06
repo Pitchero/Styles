@@ -1,0 +1,17 @@
+# OS & IDE files
+Thumbs.db
+Desktop.ini
+.DS_Store
+.Spotlight-V100
+.Trashes
+_notes/
+*/_notes/
+._*
+nbproject/
+.idea/
+
+# Sass cache
+.sass-cache/
+
+# Compiled assets
+assets/css

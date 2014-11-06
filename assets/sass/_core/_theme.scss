@@ -1,0 +1,83 @@
+// This file contains theme specific 
+@mixin theme-shadow() {
+	@include drop-shadow(0, 1px, 2px, 0.1);
+	border:1px solid $border_primary_colour;
+}
+@mixin theme-drop-shadow() {
+	@include drop-shadow(0, 1px, 2px, 0.2);
+}
+@mixin theme-no-shadow-fix() {
+	border:1px solid $border_primary_colour;
+}
+@mixin theme-round() {
+	@include rounded(3px);
+}
+@mixin theme-dark-text-shadow() {
+	text-shadow:rgba(0,0,0,0.3) 0 -1px 0;
+}
+@mixin theme-dark-text-shadow-faint() {
+	text-shadow:rgba(0,0,0,0.3) 1px 1px 4px;
+}
+@mixin theme-dark-text-shadow-dark() {
+	text-shadow:rgba(0,0,0,0.6) 1px 1px 4px;
+}
+@mixin theme-light-text-shadow() {
+	text-shadow:rgba(255,255,255,0.9) 0 1px 0;
+}
+// Apply some negative letter spacing when the font size is 14px or larger
+@mixin theme-font-size($font_size) {
+	// @if $font_size >= 36px {
+	// 	letter-spacing:-2px;	
+	// } @else if $font_size >= 19px {
+	// 	letter-spacing:-1px;
+	// }
+	font-size:$font_size;
+}
+@mixin theme-inner-shadow() {
+	@include inner-shadow();
+}
+@mixin theme-shade-light() {
+	background-image:url('/core/images/textures/shade-diagonal-light.png');
+}
+@mixin theme-shade-dark() {
+	background-image:url('/core/images/textures/shade-diagonal-dark.png');
+}
+
+@mixin theme-box($shadow_opacity:0.15, $border_colour:0, $border_width: 1px) {
+	@if $border_colour == 0 {
+		$border_colour: $border_primary_colour;
+	}
+	border:$border_width solid $border_colour;
+	@include drop-shadow(0, 1px, 2px, $shadow_opacity);
+}
+@mixin theme-box-shadow-none() {
+	border:0;
+	@include no-shadow();
+}
+@mixin theme-box-inner($shadow_opacity:0.1, $border_colour:0, $border_width: 1px) {
+	@if $border_colour == 0 {
+		$border_colour: $border_primary_colour;
+	}
+	border:$border_width solid $border_colour;
+	@include inner-shadow(0, 1px, 2px, $shadow_opacity);
+}
+
+@mixin theme-polaroid($padding: 4px, $shadow_opacity: 0.2, $border_colour: 0) {
+	background:#FFF;
+	@include theme-box($shadow_opacity, $border_colour);
+	padding:$padding;
+}
+@mixin theme-polaroid-small($shadow_opacity:0.2, $border_colour:0) {
+	@include theme-polaroid(4px, $shadow_opacity, $border_colour);
+}
+@mixin theme-polaroid-medium($shadow_opacity:0.2, $border_colour:0) {
+	@include theme-polaroid(6px, $shadow_opacity, $border_colour);
+}
+@mixin theme-polaroid-large($shadow_opacity:0.2, $border_colour:0) {
+	@include theme-polaroid(8px, $shadow_opacity, $border_colour);
+}
+@mixin theme-polaroid-xlarge($shadow_opacity:0.2, $border_colour:0) {
+	@include theme-polaroid(12px, $shadow_opacity, $border_colour);
+}
+
+

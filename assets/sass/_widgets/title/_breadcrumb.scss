@@ -1,0 +1,16 @@
+@import '_core/_core';
+
+.title-breadcrumb {
+	@include text-overflow;
+
+	.title-breadcrumb-crumb {
+		display: inline;
+		@include theme-font-size(30px);
+		vertical-align: baseline;
+		color: $text_primary_colour;
+	}
+	.title-breadcrumb-split {
+		color: $text_tertiary_colour;
+		@include theme-font-size(30px);
+	}
+}

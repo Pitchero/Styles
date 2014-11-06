@@ -1,0 +1,526 @@
+.legend {
+	color: $text_secondary_colour;
+	font-size: 17px;
+}
+
+.fields {
+    .label {
+        color: $text_secondary_colour;
+        margin-bottom: ($space_size / 3);
+    }
+	.field-invalid .label {
+		color: $negative_text_colour;
+	}
+    .field {
+        margin-bottom: $space_size;
+		position: relative;
+		clear: both;
+
+		.field-paired {
+			width: 130px;
+		}
+		.field-parallel {
+			width: 264px;
+		}
+    }
+    .actions {
+        @include clearfix();
+
+		.secondary-action {
+			@include float(left);
+			margin-top: 3px;
+			//vertical-align:middle;
+		}
+
+        .core-btn {
+            @include float(right);
+        }
+    }
+	.actions-positive {
+		float:right;
+	}
+	.actions-negative {
+		float:left;
+	}
+}
+
+.text-field {
+    @include box-sizing(border-box);
+    @include inner-shadow(0, 1px, 1px, 0.05);
+    @include rounded(0);
+    height: 2.15em;
+    line-height: 2.15em;
+	font-size: inherit;
+    border: 1px solid #CCC;
+    padding: 0 ($space_size / 2);
+    resize: none;
+    font-family: $font_regular;
+    color: $text_primary_colour;
+	//*padding: 0;
+	//*text-indent: ($space_size / 2);
+	outline:none;
+
+	&::-webkit-input-placeholder {
+		color:$text_tertiary_colour;
+	}
+	&:-moz-placeholder {
+		color:$text_tertiary_colour;
+	}
+	&:-ms-input-placeholder {
+		color:$text_tertiary_colour;
+	}
+	&:focus {
+		border-color:#AAA;
+		@include inner-shadow(0, 1px, 1px, 0.15);
+	}
+	&[disabled],
+	&.field-disabled {
+		cursor:not-allowed;
+		color:#BBB;
+		border-color:$border_primary_colour;
+		&::-webkit-input-placeholder {
+			color:#BBB;
+		}
+		&:-moz-placeholder {
+			color:#BBB;
+		}
+		&:-ms-input-placeholder {
+			color:#BBB;
+		}
+	}
+	&.text-field-invalid {
+		border-color: $negative_text_colour;
+	}
+}
+/*
+.field-invalid .text-field {
+	border-color:$negative_border_colour;
+	background-color:#FCF4F4;
+	&::-webkit-input-placeholder {
+		color:$negative_border_colour;
+	}
+	&:-moz-placeholder {
+		color:$negative_border_colour;
+	}
+	&:-ms-input-placeholder {
+		color:$negative_border_colour;
+	}
+	&:focus {
+		border-color:$negative_text_colour;
+	}
+}
+*/
+.checkboxes-field {
+	overflow: hidden;
+	@include inline-block;
+	//vertical-align: top;
+	//vertical-align: text-top;
+
+	.field-heading {
+		margin-bottom: 0;
+		font-weight: bold;
+	}
+
+	label {
+		display: block;
+	}
+}
+.select-field {
+	-webkit-appearance:none;
+	@include box-sizing(border-box);
+    @include rounded(0);
+    @include drop-shadow($alpha: 0.1);
+	height: 2.15em;
+    line-height: 2.15em;
+	font-size: inherit;
+    border: 1px solid #ccc;
+    padding: 0 0 0 ($space_size / 2);
+    resize: none;
+    font-family: $font_regular;
+    color: $text_primary_colour;
+	*padding: 0;
+	background:#FFF url('/images/forms/select-arrow.png') center right no-repeat;
+	&:focus {
+		border-color:#AAA;
+		outline:none;
+		@include drop-shadow($alpha: 0.2);
+	}
+	&[disabled],
+	&.field-disabled {
+		cursor:not-allowed;
+		color:#BBB;
+		border-color:$border_primary_colour;
+	}
+}
+.checkbox-field,
+.radio-field {
+	&[disabled] {
+		cursor:not-allowed;
+		opacity:0.5;	
+	}
+}
+textarea.text-field {
+	line-height: 1.3em;
+	padding-top: ($space_size / 3);
+	padding-bottom: ($space_size / 3);
+	height: 13em;
+	overflow: auto;
+	&.text-field-small {
+		height: 6.5em;
+	}
+	&.text-field-tall {
+		height: 26em;
+	}
+}
+.toggle-status-field {
+	@include inline-block;
+	//vertical-align: middle;
+	padding: 0 4px;
+}
+
+.search-field {
+    padding-left: 24px;
+    background: #fff url(/core/images/icons/search.png) no-repeat left center;
+	font-size: inherit;
+}
+.suggest-input .search-field {
+	*padding: 0;
+	*text-indent: 24px;
+	*margin-left: -24px;
+}
+.search-field-loading {
+	background: #fff url(/core/images/loading/spinner-tiny.gif) no-repeat 6px center;
+}
+
+.stacked-fields {
+	@include clearfix();
+	.label {
+		display:block;
+	}
+	.field {
+		float: none;
+		display: block;
+		margin-bottom: $space_size;
+
+		.label {
+			display: block;
+		}
+
+
+		.text-field {
+			width: 100%;
+		}
+	}
+	&.fields-with-sub {
+		.label-sub {
+			display: block;
+			color:$text_secondary_colour;
+			margin-bottom:$space_size;
+		}
+		.field {
+			margin:($space_size * 2) 0 0 0;
+			&:first-child {
+				margin-top:0;
+			}
+		}
+		.label {
+			color:$text_primary_colour;
+			@include theme-font-size(16px);
+			font-weight:bold;
+		}
+	}
+}
+
+.inline-fields {
+    @include clearfix();
+
+    .field {
+        //vertical-align: middle;
+		@include clearfix();
+
+        &.field-top-aligned {
+        	.label {
+        		//vertical-align: top;
+        		line-height: 30px;
+        	}
+
+        	.field-wrapper {
+        		//vertical-align: top;
+        	}
+        }
+        .label {
+    		//vertical-align: top;
+            margin: 0;
+            padding-right: $space_size;
+            text-align: right;
+            float:left;
+            width: 150px;
+            min-height:1px; // Forces width even if element is empty
+        }
+		.label-top {
+			//vertical-align: top;
+			padding-top: 8px;
+		}
+		.label-with-field {
+			padding-top:5px;
+		}
+        .text-field {
+            @include inline-block();
+            //vertical-align: middle;
+        }
+        .field-wrapper {
+            @include inline-block();
+            //vertical-align: middle;
+        }
+        textarea.text-field {
+            //vertical-align: top;
+        }
+		.multiple-fields {
+            //vertical-align: top;
+            @include inline-block();
+		}
+        .select-dropdown {
+            @include inline-block();
+            //vertical-align: middle;
+
+        }
+        .note {
+            margin-left: 170px;
+            margin-top: ($space_size / 3);
+            padding-bottom: 2px;
+            color: $text_secondary_colour;
+        }
+        .changed {
+            @include inline-block();
+            margin-bottom: 0;
+            //vertical-align: middle;
+
+            .cancel {
+                font-weight: bold;
+            }
+        }
+        .value {
+        	display:block;
+        	overflow:hidden;
+        }
+    }
+    &.fields-with-sub {
+        .label-sub {
+          display: block;
+          color:$text_secondary_colour;
+          margin-bottom:$space_size;
+          margin-left: 166px;
+
+        }
+    }
+}
+
+.fields {
+	.multiple-fields-pad {
+		li {
+			margin-right:$space_size;
+			&.last {
+				margin-right:0;
+			}	
+		}	
+	}
+	.multiple-fields-inline {
+		margin:0;
+		padding:0;
+		li {
+			@include inline-block();
+		}
+		.label {
+			width:auto;
+			@include inline-block();
+			float:none;
+		}
+	}
+	.multiple-fields-stacked {
+		margin:0;
+		padding:0;
+		li {
+			display:block;
+			margin-bottom:3px;
+			&.last {
+				margin-bottom:0;
+			}
+		}
+		.label {
+			width:auto;
+			@include inline-block();
+			float:none;
+		}
+	}
+	.multiple-fields-indented {
+		margin:0;
+		padding:0;
+		li {
+			margin-left:$space_size * 3;
+		}
+	}
+	
+	.field.with-dropdown {
+		z-index: 1000;
+	}
+}
+.text-field-block,
+.select-field-block,
+.stacked-fields .field .text-field-block,
+.stacked-fields .field .select-field-block,
+.select-field-wrap-block,
+.select-field-wrap-block select {
+	width: 100%;
+	*width: 100%;
+}
+
+.text-field-short,
+.select-field-short,
+.stacked-fields .field .text-field-short,
+.stacked-fields .field .select-field-short,
+.select-field-wrap-short,
+.select-field-wrap-short select {
+	width: 100px;
+	*width: 100px!important;
+}
+.text-field-medium,
+.select-field-medium,
+.stacked-fields .field .text-field-medium,
+.stacked-fields .field .select-field-medium,
+.select-field-wrap-medium,
+.select-field-wrap-medium select {
+	width: 300px;
+}
+.text-field-long,
+.select-field-long,
+.stacked-fields .field .text-field-long,
+.stacked-fields .field .select-field-long,
+.select-field-wrap-long {
+	width: 415px;
+}
+.text-field-full-width,
+.select-field-full-width,
+.stacked-fields .field .text-field-full-width,
+.stacked-fields .field .select-field-full-width,
+.select-field-wrap-full-width {
+	width: 100%;
+}
+.text-field-tiny,
+.select-field-tiny,
+.stacked-fields .field .text-field-tiny,
+.stacked-fields .field .select-field-tiny,
+.select-field-wrap-tiny {
+	width: 50px;
+}
+.text-field-postcode {
+	width: 80px;
+}
+
+.block-fields {
+    .field {
+        .label {
+            display: block;
+            @include inline-block();
+            //width: 150px;
+            //vertical-align: top;
+            text-align: right;
+            padding-right: $space_size;
+            padding-top: ($space_size / 2);
+        }
+        .text-field {
+            width: 500px;
+            //vertical-align: top;
+        }
+    }
+}
+
+.inline-fields,
+.block-fields {
+	.tip {
+		display:inline-block;
+		//vertical-align:middle;
+		color:$text_tertiary_colour;
+	}
+	.tip-hidden {
+		@include inline-block();
+		@include image-text();
+		width:14px;
+		height:14px;
+		background:url('/images/forms/tip-icon.png') 0 0 no-repeat;
+	}
+	
+}
+
+fieldset {
+	outline:none;
+	border:0;
+	&.actions {
+		margin-top: $space_size * 2;
+	}
+	&.box {
+		padding:($space_size * 2) ($space_size * 2);
+		margin-bottom:$space_size;
+	}
+}
+
+.fields {
+	.field.last,
+	&.last {
+		margin-bottom:0;
+	}
+}
+
+/**
+ * Nicely style select boxes (wrap with .select-field-wrap)
+ */
+.select-field-wrap {
+	@include inline-block();
+    padding:0; 
+    margin:0;
+    // width:12em;
+	@include rounded(3px);
+	@include gradient-vertical(#FFF, #eee);
+	border-radius:2px;
+    border: solid 1px #CCC;
+	//vertical-align:middle;
+	@include inline-block();
+	background:#FFF url('/images/forms/select-arrow.png') right center no-repeat;
+	overflow:hidden; /* this hides the select's drop button */
+	select {
+		width:145% /* this percentage effectively extends the drop down button out of view */; 
+		background-color:transparent /* this hides the select's background making any styling visible from the div */; 
+		-webkit-appearance: none /* this is required for Webkit browsers */; 
+		border:none; 
+		box-shadow:none;
+		outline:none;
+		font-size: inherit;
+		padding: 5px 6px;
+		font-family: $font_regular;
+	}
+}
+.select-field-wrap {
+	*border:none;
+	select {
+		*outline:none;
+		*background-color:white; 
+		*border: solid 1px #ccc; 
+		*padding:5px 6px;
+	}
+}
+.select-field-wrap select { 
+}
+
+.form-footer {
+	padding-top:$space_size * 2;
+	border-top:1px solid $border_primary_colour;
+}
+.form-footer-split {
+	@include clearfix();
+	.form-footer-split-left {
+		float:left;
+	}
+	.form-footer-split-right {
+		float:right;
+	}
+}
+

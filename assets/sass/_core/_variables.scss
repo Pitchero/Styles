@@ -1,0 +1,138 @@
+// Font families
+$font_regular: 'Roboto', Arial, Helvetica, sans-serif;
+$font_condensed: 'Roboto Condensed', "HelveticaNeue-CondensedBold", "Franklin Gothic Medium", Arial, Helvetica, sans-serif;
+$font_weight_light: 300;
+
+// Core Pitchero colours
+$ph_primary_colour:#00A0D1;
+$ph_secondary_colour:#B40000;
+
+// Text colours
+$text_primary_colour: #333;
+$text_secondary_colour: #666;
+$text_tertiary_colour: #999;
+$text_inactive_colour: #CCC;
+
+// Highlight colours
+$highlight_text_colour: #BB7C02;
+$highlight_bg_colour: #FFEECD;
+$highlight_border_colour: #EFD4A0;
+$highlight_link_colour: #EFD4A0;
+
+// Border colours, lists and table colours
+$border_primary_colour: #DDD;
+
+// Spacing for margins, padding etc.
+$space_size: 12px;
+
+// Negative and positive colours for buttons and text
+$positive_colour:#0B9C00;
+$negative_colour:#D94B4B;
+$neutral_colour:#00A0D0;
+$unsure_colour:#D88411;
+$gold_colour:#e0b800;;
+$silver_colour:#BBB;
+$bronze_colour:#a46400;
+
+// Backgrounds and borders in positive and negative colours
+$positive_text_colour: darken($positive_colour, 10%);
+$positive_bg_colour:mix(#FFFFFF, $positive_colour, 88%);
+$positive_border_colour:mix(#FFFFFF, $positive_colour, 55%);
+$negative_text_colour: darken($negative_colour, 10%);
+$negative_bg_colour:mix(#FFFFFF, $negative_colour, 88%);
+$negative_border_colour:mix(#FFFFFF, $negative_colour, 55%);
+$unsure_text_colour: darken($unsure_colour, 10%);
+$unsure_bg_colour:mix(#FFFFFF, $unsure_colour, 88%);
+$unsure_border_colour:mix(#FFFFFF, $unsure_colour, 55%);
+$dark_bg_colour:#222;
+
+// Width of our container
+$container_width:1000px;
+$network_bar_height:40px;
+$grey_bg_colour: #f3f3f3;
+
+// Packages (Premium Features)
+$package_free: #666666;
+$package_creative: #00a0d1;
+$package_bundle: #085a7F;
+
+// New packages
+$package_basic: #666666;
+$package_starter:#087700;
+$package_standard:#990b0b;
+$package_pro:#a6650b;
+$package_elite:#222222;
+
+$facebook_blue: #3B5998;
+$twitter_blue: #55acee;
+
+// Colour variations (dont change any of these)
+$primary_colour:#00A0D1;
+$primary_colour_contrast:#FFF;
+$primary_colour_contrast_highlight:$highlight_border_colour;
+$secondary_colour:#B40000;
+$secondary_colour_contrast:#FFF;
+$secondary_colour_contrast_highlight:$highlight_border_colour;
+
+$important_text_colour:#085A7F;
+$important_bg_colour:#DEEFF7;
+$important_border_colour:#B9D8E6;
+
+$primary_colour_l1:lighten($primary_colour, 1);
+$primary_colour_l2:lighten($primary_colour, 2);
+$primary_colour_l3:lighten($primary_colour, 3);
+$primary_colour_l4:lighten($primary_colour, 4);
+$primary_colour_l5:lighten($primary_colour, 5);
+$primary_colour_l6:lighten($primary_colour, 6);
+$primary_colour_l8:lighten($primary_colour, 8);
+$primary_colour_l10:lighten($primary_colour, 10);
+$primary_colour_l15:lighten($primary_colour, 15);
+$primary_colour_l20:lighten($primary_colour, 20);
+$primary_colour_l25:lighten($primary_colour, 25);
+							
+$primary_colour_d1:darken($primary_colour, 1);
+$primary_colour_d2:darken($primary_colour, 2);
+$primary_colour_d3:darken($primary_colour, 3);
+$primary_colour_d4:darken($primary_colour, 4);
+$primary_colour_d5:darken($primary_colour, 5);
+$primary_colour_d6:darken($primary_colour, 6);
+$primary_colour_d8:darken($primary_colour, 8);
+$primary_colour_d10:darken($primary_colour, 10);
+$primary_colour_d15:darken($primary_colour, 15);
+$primary_colour_d20:darken($primary_colour, 20);
+$primary_colour_d25:darken($primary_colour, 25);
+
+							
+$secondary_colour_l1:lighten($secondary_colour, 1);
+$secondary_colour_l2:lighten($secondary_colour, 2);
+$secondary_colour_l3:lighten($secondary_colour, 3);
+$secondary_colour_l4:lighten($secondary_colour, 4);
+$secondary_colour_l5:lighten($secondary_colour, 5);
+$secondary_colour_l6:lighten($secondary_colour, 6);
+$secondary_colour_l8:lighten($secondary_colour, 8);
+$secondary_colour_l10:lighten($secondary_colour, 10);
+$secondary_colour_l15:lighten($secondary_colour, 15);
+$secondary_colour_l20:lighten($secondary_colour, 20);
+$secondary_colour_l25:lighten($secondary_colour, 25);
+							
+$secondary_colour_d1:darken($secondary_colour, 1);
+$secondary_colour_d2:darken($secondary_colour, 2);
+$secondary_colour_d3:darken($secondary_colour, 3);
+$secondary_colour_d4:darken($secondary_colour, 4);
+$secondary_colour_d5:darken($secondary_colour, 5);
+$secondary_colour_d6:darken($secondary_colour, 6);
+$secondary_colour_d8:darken($secondary_colour, 8);
+$secondary_colour_d10:darken($secondary_colour, 10);
+$secondary_colour_d15:darken($secondary_colour, 15);
+$secondary_colour_d20:darken($secondary_colour, 20);
+$secondary_colour_d25:darken($secondary_colour, 25);
+
+$important_text_colour_l5:lighten($important_text_colour, 5);
+$important_text_colour_d5:darken($important_text_colour, 5);
+$important_text_colour_l10:lighten($important_text_colour, 10);
+$important_text_colour_d10:darken($important_text_colour, 10);
+
+$important_bg_colour_l5:lighten($important_bg_colour, 5);
+$important_bg_colour_d5:darken($important_bg_colour, 5);
+$important_bg_colour_l10:lighten($important_bg_colour, 10);
+$important_bg_colour_d10:darken($important_bg_colour, 10);
