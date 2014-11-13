@@ -1,3 +1,8 @@
+$grid_width : 1000px;
+$grid_margin: 20px;
+$grid_gutter: 16px;
+$grid_6_col_width: 144px;
+
 .grid-container{
     @include clearfix;
     &.container-blank{
@@ -6,47 +11,47 @@
     &.container-6-col{
         margin-right: auto;
         margin-left: auto;
-        padding-left: 20px;
-        padding-right: 20px;
-        width: 960px;
-        .grid-1 { width: 144px; }
-        .grid-2 { width: 304px; }
-        .grid-3 { width: 464px; }
-        .grid-4 { width: 624px; }
-        .grid-5 { width: 784px; }
+        padding-left: $grid_margin;
+        padding-right: $grid_margin;
+        width: $grid_width - ($grid_margin * 2);
+        .grid-1 { width: $grid_6_col_width; }
+        .grid-2 { width: ($grid_6_col_width*2) + ($grid_gutter *1); }
+        .grid-3 { width: ($grid_6_col_width*3) + ($grid_gutter *2); }
+        .grid-4 { width: ($grid_6_col_width*4) + ($grid_gutter *3); }
+        .grid-5 { width: ($grid_6_col_width*5) + ($grid_gutter *4); }
         .grid-6 {
-            width: 944px;
+            width: ($grid_6_col_width*6) + ($grid_gutter *5);
             &.gutterless{
-                width: 1000px;
-                margin-left: -20px;
-                margin-right: -20px;
+                width: $grid_width;
+                margin-left: -$grid_margin;
+                margin-right: -$grid_margin;
             }
         }
 
-        .prefix-1 { padding-left: 160px; }
-        .prefix-2 { padding-left: 320px; }
-        .prefix-3 { padding-left: 480px; }
-        .prefix-4 { padding-left: 640px; }
-        .prefix-5 { padding-left: 800px; }
+        .prefix-1 { padding-left: $grid_6_col_width + $grid_gutter; }
+        .prefix-2 { padding-left: ($grid_6_col_width + $grid_gutter)*2; }
+        .prefix-3 { padding-left: ($grid_6_col_width + $grid_gutter)*3; }
+        .prefix-4 { padding-left: ($grid_6_col_width + $grid_gutter)*4; }
+        .prefix-5 { padding-left: ($grid_6_col_width + $grid_gutter)*5; }
 
-        .suffix-1 { padding-right: 160px; }
-        .suffix-2 { padding-right: 320px; }
-        .suffix-3 { padding-right: 480px; }
-        .suffix-4 { padding-right: 640px; }
-        .suffix-5 { padding-right: 800px; }
+        .suffix-1 { padding-right: $grid_6_col_width + $grid_gutter; }
+        .suffix-2 { padding-right: ($grid_6_col_width + $grid_gutter)*2; }
+        .suffix-3 { padding-right: ($grid_6_col_width + $grid_gutter)*3; }
+        .suffix-4 { padding-right: ($grid_6_col_width + $grid_gutter)*4; }
+        .suffix-5 { padding-right: ($grid_6_col_width + $grid_gutter)*5; }
 
 
-        .push-1 { left: 160px; }
-        .push-2 { left: 320px; }
-        .push-3 { left: 480px; }
-        .push-4 { left: 640px; }
-        .push-5 { left: 800px; }
+        .push-1 { left: $grid_6_col_width + $grid_gutter;; }
+        .push-2 { left: ($grid_6_col_width + $grid_gutter)*2; }
+        .push-3 { left: ($grid_6_col_width + $grid_gutter)*3; }
+        .push-4 { left: ($grid_6_col_width + $grid_gutter)*4; }
+        .push-5 { left: ($grid_6_col_width + $grid_gutter)*5; }
 
-        .pull-1 { right: 160px; }
-        .pull-2 { right: 320px; }
-        .pull-3 { right: 480px; }
-        .pull-4 { right: 640px; }
-        .pull-5 { right: 800px; }
+        .pull-1 { right: $grid_6_col_width + $grid_gutter; }
+        .pull-2 { right: ($grid_6_col_width + $grid_gutter)*2; }
+        .pull-3 { right: ($grid_6_col_width + $grid_gutter)*3; }
+        .pull-4 { right: ($grid_6_col_width + $grid_gutter)*4; }
+        .pull-5 { right: ($grid_6_col_width + $grid_gutter)*5; }
     }
 
 
@@ -58,10 +63,16 @@
     .grid-6{
         display: inline;
         float: left;
-        margin-right: 8px;
-        margin-left: 8px;
+        margin-right: $grid_gutter/2;
+        margin-left: $grid_gutter/2;
     }
 
+    .alpha {
+        margin-left: 0;
+    }
+    .omega {
+        margin-right: 0;
+    }
 
     .push-1, .pull-1,
     .push-2, .pull-2,

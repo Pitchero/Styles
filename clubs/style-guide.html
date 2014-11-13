@@ -1,13 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Club Website Template</title>
+    <title>Club Website - Style Guide</title>
     <meta name="viewport" content="width=1148">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Global css file - this should not be modified -->
     <link rel="stylesheet" type="text/css" href="../assets/css/clubs/build.css" />
     <!-- Add a single page-specific css file here -->
     <link rel="stylesheet" type="text/css" href="../assets/css/clubs/style-guide.css" />
+    <!-- Webfonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,700,400|Roboto+Condensed:400,700" />
 </head>
 <body class="club-website">
     <div class="network-bar"></div>
@@ -301,7 +303,7 @@
                         <p>push-N and pull-N classes moved the element the equivalent number of columns (push moves right, pull moves left)</p>
                     </div>
 
-                    <div class="grid-styles">
+                    <div class="grid-styles space-bottom-2">
                         <div class="clearfix space-bottom">
                             <div class="grid-1 push-1">
                                 <p>1 column wide, pushed 1 column</p>
@@ -337,6 +339,34 @@
                                 <p>3 columns wide, pulled 3 columns<br/>
                                 (note this comes after the box to the right in the HTML)
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-6 space-bottom-2">
+                        <div class="header header-ruled pad-bottom-1-2 space-bottom">
+                            <h2 class="title-text title-text-secondary">Grid Inside a Grid</h2>
+                        </div>
+                        <p>Use alpha (first) and omega (last) classes for grids inside a grid</p>
+                    </div>
+
+                    <div class="grid-styles grid-inside-grid-styles">
+                        <div class="clearfix space-bottom">
+                            <div class="grid-3">
+                                <p>3 column</p>
+                            </div>
+
+                            <div class="grid-3">
+                                <p>3 column</p>
+                                <div class="grid-1 alpha">
+                                    <p>1 column</p>
+                                </div>
+                                <div class="grid-1">
+                                    <p>1 column</p>
+                                </div>
+                                <div class="grid-1 omega">
+                                    <p>1 column</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -23,4 +23,13 @@
 	        padding: $space-size;
 	    }
 	}
+	.grid-inside-grid-styles {
+		[class^='grid-'] {
+			height: 150px;
+		}
+		[class^='grid-'] [class^='grid-'] {
+			background: #DDD;
+			height: 100px;
+		}
+	}
 }
