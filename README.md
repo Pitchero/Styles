@@ -25,6 +25,14 @@ Compile your SASS file to the correct directory:
 sass --watch assets/sass:assets/css
 ````
 
+Add a link to the compiled CSS file in your HTML
+````HTML
+<!-- Add your own css file here -->
+<link rel="stylesheet" type="text/css" href="/assets/css/clubs/your-page.css" />
+````
+
+Edit `your-page.html` and `your-page.scss` to complete the desired design
+
 ## Style guidelines
 * See the relevant style guide for reusable components (for example `clubs/style-guide.html`)
 * Use existing variables for all colours and spacing. See `assets/sass/_core/_variables.scss` for a full list of available variables.
